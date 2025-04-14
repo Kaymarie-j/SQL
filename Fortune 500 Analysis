@@ -67,14 +67,14 @@ WHEN paid_time_off_days >=18 THEN 'acceptable'
 ELSE 'unacceptable'
 END as pto_friendly 
 FROM fortune_companies
-WHERE industry= 'Retail';
+WHERE industry = 'Retail';
 
 2. What industries have an average employee count of 3500?
 
 SELECT industry,ROUND(AVG(employees),1)as avg_employee_count 
 FROM fortune_companies
 GROUP BY industry
-HAVING avg_employee_count>=3500;
+HAVING avg_employee_count >= 3500;
 
 3. Assign all companies that have an average employee tenure of 5 years and average maternity 
 leave of no less that 10 weeks.
@@ -94,4 +94,4 @@ WHERE revenue>=250;
 
 SELECT industry, AVG(paid_time_off_days)
 FROM fortune_companies
-WHERE industry= 'Retail';
+WHERE industry = 'Retail';
