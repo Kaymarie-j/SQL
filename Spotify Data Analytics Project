@@ -3,6 +3,7 @@
 # Finally, I performed analytics on the data using SQL. 
 
 #Creating the table: 
+
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
 artist_name varchar NOT NULL,
@@ -35,7 +36,7 @@ FROM Spotifydata
 Order By popularity asc
 LIMIT 10;
 
-#2.What artist had the longest duration for a song?
+#2. What artist had the longest duration for a song?
 
 SELECT artist_name, duration_ms
 FROM Spotifydata
