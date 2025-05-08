@@ -1,4 +1,4 @@
--- Patient Demographics Questions:
+
 
 --1. What is the average of patients by gender?
 
@@ -12,8 +12,6 @@ SELECT blood_type, COUNT(*)
 FROM patients 
 GROUP BY blood_type;
 
--- Hospital and Doctor Performance Questions:
-
 --3. Which hospital has the highest number of admitted patients?
 
 SELECT hospital, COUNT(*) highest_num_patients
@@ -25,15 +23,13 @@ LIMIT 1;
 --4. What is the average length of stay per hospital or doctor?
 
 -- Per Hospital
-  SELECT hospital, ROUND(AVG((discharge_date) - (date_of_admission))) as length_of_stay
-  FROM patients
-  GROUP BY hospital;
+SELECT hospital, ROUND(AVG((discharge_date) - (date_of_admission))) as length_of_stay
+FROM patients
+GROUP BY hospital;
 -- Per Doctor
-  SELECT doctor, ROUND(AVG((discharge_date) - (date_of_admission))) as length_of_stay
-  FROM patients
-  GROUP BY doctor; 
-
--- Billing and Insurance Questions:
+SELECT doctor, ROUND(AVG((discharge_date) - (date_of_admission))) as length_of_stay
+FROM patients
+GROUP BY doctor; 
 
 --5. What is the average billing amount per insurance provider?
 
@@ -48,8 +44,6 @@ FROM patients
 GROUP BY insurance_provider
 ORDER BY total_billed DESC
 LIMIT 1;
-
--- Medical condition analysis questions:
 
 --7. Which blood type is most common among patients with hypertension or diabetes?
 
